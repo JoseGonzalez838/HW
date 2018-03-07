@@ -21,7 +21,7 @@ MYLOOP:
 	inc edx                ; move to next character
 	dec esi
    
-	;ecx is automatically decremented 
+	
 	loop MYLOOP
 
    call ExitProcess
