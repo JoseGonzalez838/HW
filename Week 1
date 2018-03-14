@@ -1,0 +1,10 @@
+1.1.3 Section Review, Questions 1, 3, 8, 12
+
+1. A linker combines files from an assembler (a program that converts assembly language to machine language) into a single program    that can run.
+3. A one-to-many relationship means that a single statement expands into multiple assembly language or machine instructions.
+8. In C++, you cannot allow a pointer of one type be assigned to another pointer of a different type. In assembly language there is    no such restriction.
+12. mov eax, Y
+    mov ebx, 4
+    imul, ebx
+    add eax, 3
+    mov X, eax
