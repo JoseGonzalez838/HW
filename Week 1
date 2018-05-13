@@ -1,24 +1,195 @@
-1.1.3 Section Review, Questions 1, 3, 8, 12
+                                    1.1.3 Section Review, Questions 1, 3, 8, 12
 
-1. A linker combines files from an assembler (a program that converts assembly language to machine language) into a single program that can run.
-3. A one-to-many relationship means that a single statement expands into multiple assembly language or machine instructions.
-8. In C++, you cannot allow a pointer of one type be assigned to another pointer of a different type. In assembly language there is no such restriction.
-12. mov eax, Y
-    mov ebx, 4
-    imul, ebx
-    add eax, 3
-    mov X, eax
+1. How do assemblers and linkers work together?
+    •	A linker combines files from an assembler (a program that converts assembly language to machine language) into a single program that can run.
+
+3. What is meant by a one-to-many relationship when comparing a high-level language to machine language?
+    •	A one-to-many relationship means that a single statement expands into multiple assembly language or machine 	instructions.
+
+8. Do you suppose type checking on pointer variables is stronger (stricter) in assembly language, or in C and C++?
+    •	In C++, you cannot allow a pointer of one type be assigned to another pointer of a different type. In assembly language, there is no such restriction.
+
+12. Challenge: Translate the following C++ expression to assembly language, using the example presented earlier in this chapter as a guide: X = (Y*4) + 3.
+         mov eax, Y
+      	 mov ebx, 4
+     	 imul, ebx
+     	 add eax, 3
+     	 mov X, eax
+
+
+                                    1.2.1 Section Review, Questions 2, 3, 10
+2. Why do you suppose translated programs often execute more quickly than interpreted ones?
+    •	In translation, an entire program L1 can be converted into an L0 program without it having to be decoded like in an interpreted program.
+
+3. (True/False): When an interpreted program written in language L1 runs, each of its instructions is decoded and executed by         a program written in language L0.
+    •	True
     
+10. Statements at the assembly language level of a virtual machine are translated into statements at which other level?
+    •	Level 2
+
+
+                                    1.3.9 Section Review, Questions 2, 3, 5, 6, 7
+2. What is the decimal representation of each of the follow unsigned binary integers? 
+    a. 248 
+    b. 202
+    c. 240
+
+3. What is the sum of each pair of binary integers?
+    a. 00010001 
+    b. 101000000
+    c. 00011110
+
+5. What is the minimum number of binary bits needed to represent each of the following unsigned decimal integers?
+    a. 7 
+    b. 9 
+    c. 16
+
+6. What is the hexadecimal representation of each of the following binary numbers?
+    a. 35DA
+    b. CEA3
+    c. FEDB
+
+7. What is the binary representation of the following hexadecimal numbers?
+    a. 1010 0100 0110 1001 0011 1111 1011 1100 
+    b. 1011 0110 1001 0111 1100 0111 1010 0001 
+    c. 0010 1011 0011 1101 1001 0100 0110 0001
     
-1.2.1 Section Review, Questions 2, 3, 10
-2. In translation, an entire program L1 can be converted into an L0 program without it having to be decoded like in an interpreted program.
-3. True
-10. Level 2
+                                  
+                                    1.7.1 Short Answer, Questions 1-22 and 25
+1.	In an 8-bit binary number, which is the most significant bit (MSB)?
+    •In an 8-bit binary number, the most significant bit is the binary number that has the greatest value furthest to the          
+    left.
+
+2. What is the decimal representation of each of the following unsigned binary integers?
+    a. 53
+    b. 150
+    c. 204
+
+3. What is the sum of each pair of binary integers? 
+    a. 0110001010
+    b. 0110010110
+    c. 0100100001
+
+4. Calculate binary 00001101 minus 00000111.
+    •0110
+
+5. How many bits are used by each of the following data types?
+    a. 16 bits
+    b. 32 bits
+    c. 64 bits
+    d. 128 bits
+
+6. What is the minimum number of binary bits needed to represent each of the following unsigned decimal integers?
+    a. 12 bit
+    b. 16 bit
+    c. 16 bit
+
+7. What is the hexadecimal representation of each of the following binary numbers?
+    a. 35DA 
+    b. CEA3 
+    c. FEDB
+
+8. What is the binary representation of the following hexadecimal numbers?
+    a. 0000 0001 0010 0110 1111 1001 1101 0100
+    b. 0110 1010 1100 1101 1111 1010 1001 0101 
+    c. 1111 0110 1001 1011 1101 1100 0010 1010
+
+9. What is the unsigned decimal representation of each of the following hexadecimal integers?
+    a. 58
+    b. 447 
+    c. 4097
+
+10. What is the unsigned decimal representation of each of the following hexadecimal integers?
+    a. 98
+    b. 1203
+    c. 671
+
+11. What is the 16-bit hexadecimal representation of each of the following signed decimal integers?
+    a. FFE8
+    b. FFB5
+
+12. What is the 16-bit hexadecimal representation of each of the following signed decimal integers?
+    a. FFEB
+    b. FFD3
+
+13. The following 16-bit hexadecimal numbers represent signed integers. Convert each to decimal.
+	a. 27641
+    b. -16093
+
+14. The following 16-bit hexadecimal numbers represent signed integers. Convert each to decimal.
+	a. 19666
+    b. -32208
+
+15. What is the decimal representation of each of the following signed binary numbers?
+	a. -75
+    b. 42
+    c. -16
+
+16. What is the decimal representation of each of the following signed binary numbers?
+	a. -128
+    b. -52
+    c. -73
+
+17. What is the 8-bit binary (two’s-complement) representation of each of the following signed decimal integers?
+    a. 11111011
+    b. 11010110
+    c. 11110000
+
+18. What is the 8-bit binary (two’s-complement) representation of each of the following signed decimal integers?
+    a. 10111000
+    b. 10011110
+    c. 11100110
+    
+19. What is the sum of each pair of hexadecimal integers?
+    a. AB2
+    b. 1106
+
+20. What is the sum of each pair of hexadecimal integers?
+    a.B82
+    b.1316
+
+21. What are the hexadecimal and decimal representations of the ASCII character capital B?
+    • Hexidecimal = 42
+    • Decimal = 66
+
+22. What are the hexadecimal and decimal representations of the ASCII character capital G?
+    • Hexidecimal = 47
+    • Decimal = 71
+
+25.Create a truth table to show all possible inputs and outputs for the boolean function described by ¬(A v B). A | B | (A v B) | ¬(A v B).
+    A | B | ¬(A v B)
+    T | T |     F
+    F | T |     F
+    T | F |     F
+    F | F |     T
+    
+
+                            1.7.2 Algorithm Workbench, Choose any 1 question
+1.Write a function that receives a string containing a 16-bit binary integer. The function must
+return the string’s integer value.
+int 32bit(string s) 
+{
+int num = 0;
+for(int i = 0; s[i] >= '0' && s[i] <= '1'; i++) 
+{
+ num = num * 2 + s[i]-'0';
+}
+return num;
+}
 
 
-1.3.9 Section Review, Questions 2, 3, 5, 6, 7
-2. (A) 248 (B) 202 (C) 240
-3. (A) 00010001 (B) 101000000 (C) 00011110
-5. (A) 7 (B) 9 (C) 16
-6. (A) 35DA (B) CEA3 (C) FEDB
-7. (A) 1010 0100 0110 1001 0011 1111 1011 1100 (B) 1011 0110 1001 0111 100 0111 1010 0001 (C) 0010 1011 0011 1101 1001 0100 0110 0001
+                            Extra Credit: 1.4.2 Section Review, Questions 1-5
+1. Describe the following boolean expression: ¬X ∨ Y.
+    • Not X, or Y.
+    
+2. Describe the following boolean expression: (X ∧ Y).
+    • Both X and Y
+    
+3. What is the value of the boolean expression (T ∧ F) ∨ T?
+    • True
+    
+4. What is the value of the boolean expression ¬(F ∨ T)?
+    • False
+    
+5. What is the value of the boolean expression ¬F ∨ ¬T?
+    • True
