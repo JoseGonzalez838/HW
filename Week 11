@@ -1,4 +1,4 @@
- 						Chapter 4, Section 4.10 Programming Exercises: Question 2.
+ 			Chapter 4, Section 4.10 Programming Exercises: Question 2.
 2. Write a program with a loop and indexed addressing that exchanges every pair of values in an array 
 with an even number of elements.  Therefore, item i will exchange with item i+1, and item i+2 will 
 exchange with item i+3, and so on.
