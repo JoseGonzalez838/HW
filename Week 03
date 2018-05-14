@@ -1,68 +1,114 @@
 					3.1.11 Section Review, Questions 1, 2, 3, 4
 1. Using the value -35, write it as an integer literal in decimal, hexadecimal, octal, and binary formats that are
 consistent with MASM syntax.
-
+	• Decimal: -35d
+	• Hexadeciaml: 0DDh
+	• Octal: 335o
+	• Binary: 11011101b
+	
 2. (Yes/No): Is A5h a valid hexadecimal literal?
-
+	• No, because a hexadecimal must start with a 0 before the first letter.
+	
 3. (Yes/No): Does the multiplication operator (*) have a higher precedence than the division operator (/) in integer expressions?
-
+	• No, they are interchangable because of PE(M/D)(A/S). It depends on which operation is first in the expression.
+	
 4. Create a single integer expression that uses all the operators from Section 3.1.2. Calculate the value of the expression.
-
+	• [(5+2) * 2] - 4 + [(14 MOD 5)/ 2]
+	• [7 * 2] - 4 + [4 / 2]
+	• 14 - 4 + 2
+	• 12
 
 
 					3.2.4 Section Review, Questions 4, 5
 4. In the AddTwo program, which register holds the sum?
-
+	• EAX
+	
 5. In the AddTwo program, which statement halts the program?
-
+	• INVOKE ExitProcess, 0
 
 
 					3.3.3 Section Review, Questions 1, 2, 3, 4
 1. What types of files are produced by the assembler?
-
+	• From the assembler, an object file and a listing file are created.
+	
 2. (True/False): The linker extracts assembled procedures from the link library and inserts them in the executable program.
-
+	• True
+	
 3. (True/False): When a program's source code is modifed, it must be assembled and linked again before it can be executed
 with the changes.
-
+	• True
+	
 4. Which operating system components reads and executes programs?
-
+	• The OS loader utility reads the executable file and sens it to the CPU to the memory address to run the program.
 
 
 					3.4.13 Section Review, Questions 1, 2, 3, 4, 5
 1. Create an uninitialized data declaration for a 16-bit signed integer.
-
+	• int16 SWORD ?
+	
 2. Create an uninitialized data declaration for an 8-bit unsigned integer.
-
+	• int8 BYTE ?
+		
 3. Create an uninitialized data declaration for an 8-bit signed integer.
-
+	• int8 SBYTE ?
+	
 4. Create an uninitialized data declaration for a 64-bit integer.
-
+	• int64 QSWORD ?
+	
 5. Which data type can hold a 32-bit signed integer?
-
+	• SDWORD
 
 
 					3.5.5 Section Review Question 3
 3. Write a statement that causes the assembler to calculate the number of bytes in the following array, and assign the value
 to a symbolic constant named ArraySize: myArray WORD 20 DUP(?)
+	• arrSize = ($-myArray)
 
 
 					3.9.1 Short Answer, Questions 4, 5, 6, 25
 4. Explain why the term "assembler language" is not quite correct.
-
+	• It's not quite correct because an assembler language is the compiler that assembles from assembly language to 
+	machine language.
+	
 5. Explain the difference between big endian and little endian. Also, look up the origins of this term on the Web.
-
+	• Big endian order stores from high to low or most significant byte to least significant byte.
+	Little endian is the opposite from big endian. According to the web, Jonathan Swift, who in Gulliver's Travels (1726) 
+	used them to describe the opposing positions of two factions in the nation of Lilliput. 
+	
 6. Why might you use a symbolic constant rather than an ineger literal in your code?
-
+	• It is more consistent to write a symbolic constant if you are using a constant repeatedly throughout your code.
+	Also, symbolic constants do not reserve any memory space.
+	
 25. Which data directive creates a 32-bit signed integer variable?
-
-
+	• SDWORD
+	
 
 					3.9.2 Algorithm Workbench, Questions 4, 7, 13
 4. Find out if you can declare a variable of type DWORD and assign it a negative value. What does this tell you about the
 assembler's type checking?
-
+	• You would be able to assign a negative value since there is no type-checking.
+	
 7. Declare an array of 120 uninitialzed unsigned doubleword values.
-
+	• Array DWORD 120 (?)
+	
 13. Declare a string variable containing the word "TEST" repeated 500 times.
+	• String BYTE 500 DUP ("TEST")
+	
+	
 					3.10 Programming Exercises, Pick any 1 exercise
+1. Using the AddTwo program from Section 3.2 as a reference, write a program that calculates the
+following expression, using registers: A = (A + B) − (C + D). Assign integer values to the EAX,
+EBX, ECX, and EDX registers
+	.code
+	main PROC
+	mov eax, 10
+	mov ebx, 5
+	mov ecx, 2
+	mov edx, 3
+	add ebx, eax
+	add edx, ecx
+	neg edx
+	add ebx, edx
+	INVOKE ExitProcess, 0
+	main ENDP
+	ENDP main
