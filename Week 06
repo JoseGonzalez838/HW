@@ -1,2 +1,101 @@
-5.9 Programming Exercises, Question 10
-5.9 Programming Exercises, Question 7 (You will need to do this in 32 bit) or write a program that uses the Random64 function from the Irvine64 library.
+					5.9 Programming Exercises, Question 7 
+(You will need to do this in 32 bit) or write a program that uses the Random64 function from the Irvine64 library.
+
+7. Write a program that displays a single character at 100 random screen locations, using a timing
+delay of 100 milliseconds. Hint: Use the GetMaxXY procedure to determine the current size of
+the console window.
+
+ExitProcess proto
+WriteInt64  proto
+Random64    proto
+Crlf		proto
+ReadInt64	proto
+
+.data
+;declare a random character
+
+
+.code
+main proc
+	XOR rdx,rdx
+	call Random64
+	mov rcx,100
+	div rcx
+	mov rcx,rdx
+L1:
+	mov rax,rcx
+	call WriteInt64
+LOOP L1
+	call ReadInt64
+	call Crlf
+
+	; loop 100 times (set rcx =100)
+	; get max X and Y (GetMaxXY function)
+	; determine a random X value between 0 and max X (RandomRange)
+	; determine a random Y value between 0 and max Y (RandomRange)
+	; set cursor to a the x,y we just calculated
+	; write our character to the screen (WriteChar)
+	;end loop
+
+main endp
+end
+
+
+					5.9 Programming Exercises, Question 10
+10. Write a procedure that produces N values in the Fibonacci number series and stores them in an
+array of doubleword. Input parameters should be a pointer to an array of doubleword, a
+counter of the number of values to generate. Write a test program that calls your procedure,
+passing N = 47. The first value in the array will be 1, and the last value will be 2,971,215,073.
+Use the Visual Studio debugger to open and inspect the array contents.
+
+;Fibonacci
+
+ExitProcessc proto
+WriteInt64 proto
+Crlf proto
+
+.data
+nMinus1 QWORD 1
+nMinus2 QWORD 0
+n		QWORD ?
+count QWORD 47-1
+
+.code
+main proc
+	;set loop counter
+	mov rcx, count
+	
+	;print nMinus2
+	mov rax, nMinus2
+	call WriteInt64
+	call Crlf
+	
+	;print nMinus1
+	mov rax, nMinus1
+	call WriteInt64
+	call Crlf
+L1:
+	;set n = nMinus2 + nMinus1	;1+1
+	mov r9, nMins2
+	add r9, nMinus1
+	mov n, r9
+	
+	;print n
+	mov rax, n
+	call WriteInt64
+	call Crlf
+	
+	;nMinus2 = nMinus1
+	mov r9, nMinus1
+	mov nMinus2, r9
+	
+	;nMinus1 = n
+	mov r9, n
+	mov nMinus1, r9
+	
+loop L1
+
+	mov ecx, 0
+	call ExitProcess
+main endp
+end
