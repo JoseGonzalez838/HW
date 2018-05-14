@@ -1,4 +1,11 @@
-Convert this variable to decimal: DWORD  1111 1111 1111 1111 1111 1111 1111 1110b
-Convert this variable to decimal: SDWORD 1111 1111 1111 1111 1111 1111 1111 1110b
-Convert this variable to decimal: DWORD  0000 0000 0000 0000 0000 0000 1111 1110b
-Convert this variable to decimal: SDWORD 0000 0000 0000 0000 0000 0000 1111 1110b
+1. Convert this variable to decimal: DWORD  1111 1111 1111 1111 1111 1111 1111 1110b
+ 	= 4,294,967,294
+
+2. Convert this variable to decimal: SDWORD 1111 1111 1111 1111 1111 1111 1111 1110b
+	= -2
+
+3. Convert this variable to decimal: DWORD  0000 0000 0000 0000 0000 0000 1111 1110b
+	= 254
+
+4. Convert this variable to decimal: SDWORD 0000 0000 0000 0000 0000 0000 1111 1110b
+	= 254
