@@ -1,46 +1,76 @@
-                          					  2.1.5 Section Review, Questions 1, 2, 3, 4, and 5
+                          		2.1.5 Section Review, Questions 1, 2, 3, 4, and 5
 1. The central processor unit (CPU) contains registers and what other basic elements?
-
+	• The CPU has registers, a Control Unit (CU), High-frequency clock, and arithmetic logic unit
+	
 2. The central processor unit is connected to the rest of the computer system using what three buses?
-
+	• Data bus
+	• Control bus
+	• Address bus
+	
 3. Why does memory access take more machine cycles than register access?
-
+	• The registers are implemented into the CPU, meanwhile the memory access has to be read
+	and written to the CPU since it's not part of the CPU.
+	
 4. What are the three basic steps in the instruction execution cycle?
-
+	• Fetch
+	• Decode
+	• Execute
+	
 5. Which two additional steps are required in the instruction execution cycle when a memory operand is used?
-
-
-																			2.4.3 Section Review, Question 5
+	• Fetch the operand
+	• Store the result of execution
+	
+	
+					2.4.3 Section Review, Question 5
 5. What is the purpose of the 8259A PIC controller?
 
-
-																			2.5.2 Section Review, Questions 1, 3, 4, and 5
+	•The 8259A PIC controller handles all hardware interrupts. In example, devices such as mouses, keyboards,
+	clock drives, etc. have buttons that interrupt the CPU to process their commands immediately.
+	
+	
+					2.5.2 Section Review, Questions 1, 3, 4, and 5
 1. Of the four levels of input/output in a computer system, which is the most universal and portable?
-
+	• The most universal and portable is the Application Program (level 3) because it is capable of working with other OS.
+	
 3. Why are device drivers necessary, given that the BIOS already has code that communicates with the computer's hardware?
-
+	•The BIOS allows the computer communicate with the hardware it contains. Since device drivers are changing, the BIOS
+	would not be able to keep up.
+	
 4. In the example regarding displaying a string of characters, which level exists between the
 operating system and the video controller card?
-
+	• BIOS function (level 1)
+	
 5. Is it likely that the BIOS for a computer running MS-Windows would be different from that
 used by a computer running Linux?
+	• No, because although they have different operating systems the BIOS would work for both.
 
-
-																			2.8 Review Question 7, 8, 9, 10, 12, 19, 20, 25, and 26
+					2.8 Review Question 7, 8, 9, 10, 12, 19, 20, 25, and 26
 7. Which part of the CPU performs floating-point arithmethic?
-
+	• Floating Point Unit (FPU)
+	
 8. On a 32-bit processor, how many bits are contained in each floating-point data register?
-
+	• 80 bits
+	
 9. (True/False): The x86-64 instruction set is backward-compatible with the x86 instruction set.
-
+	• True
+	
 10. (True/False): In current 64-bit chip implementations, all 64 bits are used for addressing.
-
+	• False
+	
 12. (True/False): Static RAM is usually less expensive than dynamic RAM.
-
-19. (True/False): A bus is a plastic cable that is attached to the motherboard at both ends, but does not sit directly on the motherboard.
-
+	• False
+	
+19. (True/False): A bus is a plastic cable that is attached to the motherboard at both ends,
+but does not sit directly on the motherboard.
+	• False
+	
 20. (True/False): CMOS RAM is the same as static RAM, meaning that it holds its value without any extra power or refresh cycles.
-
+	• False
+	
 25. At which level(s) can an assembly language program manipulate input/output?
-
+	• Assembly language programs can choose form all the levels. Hardware (level 0), BIOS function (level 1)
+	OS funsction (level 2), Application program (level 3).
+	
 26. Why do game programs often send their sound output diretly to the sound card's hardware ports?
+	• They try to take advantage of the latest features in sound cards. That is why the send the output directly to
+	the sound cards hardware.
