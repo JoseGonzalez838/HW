@@ -2,3 +2,80 @@
 8. Using a loop and indexed addressing, write code that rotates the members of a 32-bit integer array 
 forward one position.  The value at the end of the array must wrap around to the first position.  
 For example, the array [10,20,30,40] would be transformed into [40,10,20,30]
+
+
+ExitProcess proto
+WriteInt64 proto
+ReadInt64 proto
+.data
+myArray QWORd 10d,20d,30d,40d
+Target QWORD 4 DUP(0)
+.code
+
+main proc
+
+		mov rcx, LENGTHOF myArray		;4
+              	mov rbx, 0
+		mov r12 ,8
+
+L1:
+		mov rax,rbx
+		mul r12
+		mov r11,rax
+		mov rax, myArray[r11]
+		
+		call WriteInt64
+		inc rbx
+loop L1
+
+		mov rcx, 4
+        	mov rbx, 0
+		mov r12 ,8
+
+SWAPL2:
+		mov rax,rbx
+		mul r12
+		mov r11,rax
+		mov rbp,r11
+		add rbp,8
+		
+		mov r14, myArray[r11]
+		mov Target[rbp],r14
+		;mov r15,myArray[rbp]
+		;add r11,24
+		;mov myArray[r11],r15
+		;mov myArray[rbp],r14
+
+		cmp rbx, 4
+
+		je ifFour
+
+		ifFour:
+		mov r14, myArray[r11]
+		mov Target[0],r14
+		add rbx, 1
+
+loop SWAPL2
+
+		call ReadInt64
+		mov rcx, 4
+       		mov rbx, 0
+		mov r12 ,8
+
+L3:
+
+		mov rax,rbx
+		mul r12
+		mov r11,rax
+		mov rax, Target[r11]
+		
+		call WriteInt64
+		inc rbx
+
+loop L3
+
+
+call ReadInt64
+call ExitProcess
+main endp
+end
