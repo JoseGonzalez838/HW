@@ -35,7 +35,7 @@ SWAPL2:
 		mov rax,rbx
 		mul r12
 		mov r11,rax
-		mov rbp,r11;
+		mov rbp,r11
 		add rbp,8
 
 		mov r14, myArray[r11]
