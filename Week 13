@@ -1,2 +1,67 @@
 Write a program that does the following:
 	Given an array of 8-byte integers, sort the array using the Bubble Sort algorithm. Your program should print the array before and after the sort takes place.
+
+
+ExitProcess proto
+WriteInt64 proto
+Crlf proto
+.data
+myArray QWORD 6d,3d,9d,2d,4d,1d,10d,7d,5d
+.code
+
+main proc
+
+	mov rcx, LENGTHOF myArray
+	mov rsi, 0
+
+L1:
+		mov rax, myArray[rsi * 8]
+		
+		call WriteInt64
+		inc rsi
+
+loop L1
+
+call Crlf
+
+	;bubble sort array
+	mov rcx, LENGTHOF myArray
+
+OUTERLOOP:
+	mov r15, rcx
+	mov rcx, LENGTHOF myArray
+	dec rcx
+	mov rsi,0
+		INNERLOOP:
+			mov r9, myArray[rsi * 8]
+			mov r11, rsi
+			inc r11
+			mov r10, myArray[r11 * 8]
+			cmp r9, r10
+			jle ENDLOOP
+			SWAP:
+				mov r13, r9
+				mov myArray[rsi * 8], r10
+				mov myArray[r11 * 8], r13
+			ENDLOOP:
+				inc rsi
+
+loop INNERLOOP
+	mov rcx, r15		
+loop OUTERLOOP
+
+	mov rcx, LENGTHOF myArray
+	mov rsi, 0
+
+L2:
+	mov rax, myArray[rsi * 8]
+	
+	call WriteInt64
+	inc rsi
+
+loop L2
+
+	call ExitProcess
+	
+main endp
+end
