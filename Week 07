@@ -21,9 +21,10 @@ XXORY proto
 	disp4 BYTE "4. x XOR y",0
 	disp5 BYTE "5. Exit program",0
 	ANSWER BYTE 0
+	RESULT BYTE 2
 	X BYTE 0
 	Y BYTE 0
-	RESULT BYTE 2
+	
 
 .code
 main proc
