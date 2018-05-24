@@ -1,15 +1,26 @@
 1. Briefly describe the concept of "Stack Frame" (1 through 5 points depending on quality of the answer)
 	Hint: https://en.wikipedia.org/wiki/X86_calling_conventions
+	
+	- A Stack Frame is also called an activation record. It collects data for each function execution. In includes local 	variables, parameters, return value, etc.
+
 
 2. Briefly describe the concept of a "Calling Convention" (1 through 5 points depending on quality of the answer)
  
+ 	- Calling  Convection descirbe in which order parameters are allocated and how they are called.
+ 
 3. Why do the book examples always start functions with "push ebp" and "mov ebp,esp" (2 points)
  
+ 	- It is done so it more elements can be pushed without disrupting the stack.
+ 
 4. What is the x64 equivalent to "push epb" and "mov ebp,esp)" (2 points)
+
+	- push rbp
+	  mov rbp, rsp
  
 5. What are the differences between "Microsoft x64 calling convention" and "System V AMD64 ABI calling convention" (2 points)
 	Hint: https://en.wikipedia.org/wiki/X86_calling_conventions
 
+	-The differences between the are that Microsoft x64 calling convention creates shadowspace on function entry while the 		system V AMD64 must have all registered that saved manually.
 
 void myFunction(int a, int b, int c, int d, int e, int f)  
 {
@@ -18,6 +29,10 @@ void myFunction(int a, int b, int c, int d, int e, int f)
 6. Upon entry to myFunction (above), what does the stack look like when using Microsoft x64 calling convention? (3 points)
 	Hint: https://docs.microsoft.com/en-us/cpp/build/parameter-passing
 
-
+	-the first 4 parameter will be pushed as follows: a into rcx, b into rdx, c into
+	r8 and d into r9. int e and int f will be pushed on the stack from left to right.
+	
 7. Upon entry to myFunction (above), what does the stack look like when using stdcall convention (3 points)
 	Hint: https://en.wikipedia.org/wiki/X86_calling_conventions
+
+	- The stack will take the parameters from left to right so the outout would be f,e,d,c,b,a
